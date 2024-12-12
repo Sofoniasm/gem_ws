@@ -1,0 +1,8 @@
+prefix=/home/sofonias/gem_ws/devel
+
+Name: gem_lanenet
+Description: Description of gem_lanenet
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

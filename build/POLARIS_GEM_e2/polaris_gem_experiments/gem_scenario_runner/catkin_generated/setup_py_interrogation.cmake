@@ -1,0 +1,7 @@
+set(gem_scenario_runner_SETUP_PY_SETUP_MODULE "setuptools")
+set(gem_scenario_runner_SETUP_PY_VERSION "1.0.0")
+set(gem_scenario_runner_SETUP_PY_SCRIPTS "")
+set(gem_scenario_runner_SETUP_PY_PACKAGES "gem_scenario_runner")
+set(gem_scenario_runner_SETUP_PY_PACKAGE_DIRS "src/gem_scenario_runner")
+set(gem_scenario_runner_SETUP_PY_MODULES "")
+set(gem_scenario_runner_SETUP_PY_MODULE_DIRS "")

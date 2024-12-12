@@ -1,0 +1,8 @@
+prefix=/home/sofonias/gem_ws/install
+
+Name: gem_scenario_runner
+Description: Description of gem_scenario_runner
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
