@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        ROS_SETUP = '/opt/ros/noetic/setup.bash'
+    }
+
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                sh '/usr/bin/bash -c "rm -rf /var/lib/jenkins/gem_ws/src"'
+            }
+        }
+
+        stage('Clone ROS Workspace') {
+            steps {
+                sh '''
+                /usr/bin/bash -c "mkdir -p /var/lib/jenkins/gem_ws/src"
+                /usr/bin/bash -c "cd /var/lib/jenkins/gem_ws/src && git clone https://gitlab.engr.illinois.edu/gemillins/POLARIS_GEM_e2.git"
+                '''
+            }
+        }
+
+        stage('Set Up ROS Environment') {
+            steps {
+                sh '''
+                /usr/bin/bash -c "if [ -f ${ROS_SETUP} ]; then . ${ROS_SETUP}; else echo 'ROS setup script not found!'; exit 1; fi"
+                '''
+            }
+        }
+
+        stage('Build Workspace') {
+            steps {
+                echo "Building the workspace"
+            }
+        }
+
+        stage('Run Simulation') {
+            steps {
+                echo "Running the simulation"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning up after the pipeline"
+        }
+    }
+}
